@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--jQuerry練習-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #info{
+            position: absolute;
+            top:0;
+            right: 0;
+            background-color: #00f8ac;
+            padding: 5px 20px;
+        }
+    </style>
+<!--    jQuerry起手式-->
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script>
+        function showTime(){
+        var now=new Date();
+        var nowY=now.getFullYear();
+        var nowM=now.getMonth()+1;
+        var nowD=now.getDate();
+        var nowW=now.getDay();
+        var nowH=now.getHours();
+        var nowI=now.getMinutes()
+        var nowS=now.getSeconds();
+        
+        if(nowS<10){
+            nowS='0'+nowS;
+        }
+        if(nowI<10){
+            nowI='0'+nowI;
+        }
+            
+        if(nowW==1){
+            nowW='一';
+        }else if(nowW==2){
+            nowW='二';
+        }else if(nowW==3){
+            nowW='三';
+        }else if(nowW==4){
+            nowW='四';
+        }else if(nowW==5){
+            nowW='五';
+        }else if(nowW==6){
+            nowW='六';
+        }else{
+            nowW='日';
+        }
+            
+        var msg=nowY+'年'+nowM+'月'+nowD+'日 星期'+nowW+' '+nowH+':'+nowI+':'+nowS;
+        
+            $('#info').html(msg);
+        }
+        
+        $(document).ready(function(){
+        showTime();
+        setInterval(showTime,1000);
+        });
+    </script>
+</head>
+<body>
+    <div id="info">info</div>
+</body>
+</html>
+<script>
+//document.getElementById('info').innerHTML=Date();
+</script>

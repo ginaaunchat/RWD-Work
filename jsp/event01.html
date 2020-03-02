@@ -1,0 +1,71 @@
+<!doctype html>
+<!--依照addClass,removeClass變化class; this的練習-->
+<html>
+<head>
+<meta charset="utf-8">
+<title>event</title>
+<style type="text/css">
+ul li {
+	float: right;
+	list-style-type: none;
+	margin-right: 10px;
+	margin-left: 10px;
+	border: 1px solid #666;
+	padding-top: 2px;
+	padding-right: 10px;
+	padding-bottom: 2px;
+	padding-left: 10px;
+}
+ul {
+	height: 25px;
+}
+.large {
+	font-size: 24px;
+}
+.small {
+	font-size: 10px;
+}
+.selected {
+	background-color: #FF0;
+}
+</style>
+
+</head>
+
+<body>
+<ul id="sizeMenu">
+  <li>大型字體</li>
+  <li>正常字體</li>
+  <li>小型字體</li>
+</ul>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare, quam sit amet ornare tincidunt, nisl nulla suscipit risus, vel aliquam nisl enim non augue. Vestibulum quis rutrum lectus. Aenean eu velit vitae orci feugiat tincidunt. Nam non sapien non ligula condimentum varius. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec eget fermentum orci. Duis vehicula sodales sagittis. Nullam quam lacus, dapibus nec ultrices ac, mollis vulputate odio. Praesent vestibulum risus et diam tincidunt ullamcorper. Nullam et leo vel leo feugiat ultrices. Aliquam laoreet nibh non enim placerat, at bibendum enim tempus. Cras massa ante, mollis nec sem gravida, semper gravida nisl. Vestibulum ut vulputate magna, sollicitudin facilisis lacus. Suspendisse fermentum, nunc in imperdiet fermentum, nulla ligula scelerisque tortor, et feugiat est purus a diam. Nam nec orci tellus.</p>
+<p>In hac habitasse platea dictumst. Nam elementum massa sed semper sodales. Cras gravida, augue id porttitor pellentesque, mauris lacus eleifend nulla, semper semper lectus lectus vitae libero. Quisque sed mi eget diam interdum porttitor. Vivamus vitae elit posuere, ullamcorper lacus ut, volutpat ante. In ultricies, leo eget aliquet tempor, nulla orci adipiscing dui, eu adipiscing augue quam at diam. Duis adipiscing, diam eu lacinia varius, sapien tortor euismod ipsum, sed porta diam diam ut odio. Cras et magna odio. Quisque tempor orci arcu, vel rhoncus orci sodales vitae. Sed vel consectetur metus, sit amet auctor odio. Proin ut volutpat mauris.</p>
+<p>Integer elementum ipsum sit amet pulvinar molestie. Donec congue blandit magna vitae vestibulum. Morbi vehicula blandit lectus non molestie. Maecenas egestas nisi vitae nisi rhoncus sodales. Suspendisse rhoncus gravida orci sed volutpat. Proin eget lobortis sem. Proin convallis tortor quis vehicula molestie. Aliquam cursus ligula vitae condimentum imperdiet. Maecenas sodales dapibus elementum. Nulla nec ligula non neque mollis vehicula sit amet vitae quam. Mauris non venenatis lectus, nec vehicula nibh. Phasellus dictum ultrices risus, vitae molestie mauris sagittis sit amet. Curabitur adipiscing, orci nec semper eleifend, metus ligula aliquam odio, sed fringilla ligula nunc interdum eros.</p>
+<p>Aenean erat tortor, fermentum at libero in, fermentum molestie ipsum. In in sagittis libero. In venenatis sem eu justo commodo, in venenatis nulla condimentum. Vivamus commodo arcu eu lacus ultricies tempus. Nulla porta eleifend odio, non commodo mi consequat at. Curabitur pretium, orci nec dapibus consectetur, dolor orci rutrum nunc, eu cursus tortor velit ut lorem. Morbi pulvinar sagittis est sit amet lobortis. Fusce laoreet sagittis ante porttitor elementum. Aenean ut nisi id elit auctor porttitor. Nullam faucibus purus at eros adipiscing, ac ultrices elit commodo. Phasellus euismod iaculis justo, viverra convallis odio aliquet nec. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut luctus lacinia lacus vel vehicula. Nulla eros lacus, auctor a tempus sed, cursus quis lorem. Fusce turpis lacus, feugiat ac leo non, molestie pellentesque elit.</p>
+<p>Curabitur sodales ac erat ut convallis. Etiam aliquam, tellus vestibulum tristique imperdiet, sem lorem facilisis purus, sit amet vestibulum mi massa id diam. Nunc pharetra, eros id faucibus ullamcorper, libero nulla euismod augue, vel auctor risus velit eu lorem. Suspendisse varius dui eu diam semper vulputate. Donec adipiscing nulla sit amet orci hendrerit, eget tincidunt sem egestas. In tincidunt bibendum libero, id aliquam nulla pharetra eu. Integer blandit nisi quis risus varius, a imperdiet nulla vehicula. Proin varius ac ipsum ac pulvinar. Integer massa mauris, facilisis eget metus in, placerat semper dui. Aenean lobortis, arcu sed gravida tempus, lacus justo rutrum ante, ut adipiscing elit felis eget ipsum.</p>
+</body>
+</html>
+<script src='../js/jquery-3.3.1.min.js'></script>
+<script>
+$(document).ready(function(){
+//    大型字體
+    $('#sizeMenu li:nth-child(1)').click(function(){
+        $('p').removeClass('small');
+        $('p').addClass('large');
+})
+//    小型字體
+    $('#sizeMenu li:nth-child(3)').click(function(){
+        $('p').removeClass('large');
+        $('p').addClass('small');
+})
+//    正常字體
+    $('#sizeMenu li').eq(1).click(function(){
+        $('p').removeClass('small large');
+    })    
+//    選取背景色
+    $('#sizeMenu li').click(function(){
+        $('#sizeMenu li').removeClass('selected');
+        $(this).addClass('selected');
+    })
+                  })    
+</script>

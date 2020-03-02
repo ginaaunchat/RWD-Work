@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-hant-tw">
+<head>
+    <meta charset="UTF-8">
+    <title>NatureCare</title>
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="fontawesome-free-5.2.0-web/css/all.css">
+    <script src='js/jquery-3.3.1.min.js'></script>
+    <script src='js/jquery.easing.1.3.js'></script>
+    <script src='js/comm.js'></script>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    
+    <script>
+    $(function(){
+        $('footer').load('footerContent.html');
+        $('header').load('headerContent.html',function(){
+            mainNavEffect();
+        });
+        
+        $('.slider').bxSlider({
+            auto:true,
+            mode:'fade',
+        });
+        
+        $('#cf1').submit(function(){
+            
+            $('.err').remove();
+            
+            if(!$('#name').val()){
+                $('#name').parent().append('<span class="err">未填寫!!</span>');
+            };
+            
+            if(!$('#mobile').val()){
+                $('#mobile').parent().append('<span class="err">未填寫!!</span>');
+            };
+            
+            if($('.err').length>0){
+                return false; 
+            };
+        });
+        
+    });
+    </script>
+    <style>
+        .err{
+            color: white;
+            background-color: red;
+            padding: 2px;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+        #cf1{
+            width: 95%;
+            margin: 0 auto;     
+            font-size: 1em;
+            }
+        #cf1 fieldset{
+            margin-bottom: 20px;
+            border: 1px solid rgba(45, 85, 15, 0.9);
+        }
+        #cf1 legend{
+            background-color: rgba(45, 85, 15, 0.7);
+            padding: 2px 5px;
+            color: white;
+            font-size: 0.95em;
+            letter-spacing: 0.15em;
+            box-shadow:2px 2px rgba(0, 0, 0, 0.7);
+        }
+        #cf1>p:last-child{
+            width: 100%;
+            text-align: center;
+        }
+        #cf1 p>label:first-child{
+/*            background-color: aqua;*/
+            width: 100px;
+            display: inline-block;
+            text-align-last: justify;
+            margin-right: 1em;
+        }
+        #cf1 p>label:first-child::after{
+            content: "：";
+            position: absolute;
+        }
+        #cf1 #desc{
+            width: calc(100% - 130px);
+            resize: none;
+        }
+        [for="desc"]{
+            vertical-align: top;
+        }
+        #female{
+            margin-left: 10px;
+        }
+        [for*="time"]{
+            margin-right: 25px;
+        }
+        
+        @media(min-width:1281px){
+            #cf1{
+                width: 95%;
+                margin: 0 auto;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            #cf1 fieldset{
+                flex: 1;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+<header>
+</header>
+<div id="banner">
+    <div class="slider">
+        <div><img src="images/banner.jpg" alt=""></div>
+        <div><img src="slider/slider01.jpg" alt=""></div>
+        <div><img src="slider/slider02.jpg" alt=""></div>
+        <div><img src="slider/slider03.jpg" alt=""></div>
+        <div><img src="slider/slider04.jpg" alt=""></div>
+        <div><img src="slider/slider05.jpg" alt=""></div>
+  </div>
+</div>
+<main>
+    <form id="cf1" action="mailData.php" method="post">
+        <fieldset>
+            <legend>聯絡內容</legend>
+            <p>
+                <label for="query">聯繫類型</label>
+                <select name="query" id="query">
+                <option value="---" disabled selected>---請選取---</option>
+                <option value="product">商品諮詢</option>
+                <option value="course">課程預約</option>
+                <option value="booking">其他諮詢</option>
+                </select>
+            </p>
+            <p>
+                <label for="desc">詳細內容</label>
+                <textarea name="desc" id="desc" cols="30" rows="10" placeholder="請輸入詳細內容"></textarea>
+            </p>
+        </fieldset>
+        <fieldset>
+           <legend>聯繫資訊</legend>
+            <p>
+                <label for="name">姓名</label>
+                <input type="text" name="name" id="name">
+            </p>
+            <p>
+                <label for="">性別</label>
+                <input type="radio" name="gender" id="male" value="1">
+                <label for="male">男</label>
+                <input type="radio" name="gender" id="female" value="0">
+                <label for="female">女</label>
+            </p>
+            <p>
+                <label for="mobile">行動電話</label>
+                <input type="tel" name="mobile" id="mobile">
+            </p>
+            <p>
+                <label for="email">電子郵件</label>
+                <input type="email" name="email" id="email">
+            </p>
+            <p>
+                <label for="">聯絡時段</label>
+                <input type="checkbox" name="time[]" id="time1" value="9-12">
+                <label for="time1">9：00-12：00</label>
+                <input type="checkbox" name="time[]" id="time2" value="12-17">
+                <label for="time2">13：00-17：00</label>
+                <input type="checkbox" name="time[]" id="time3" value="18-22">
+                <label for="time3">18：00-22：00</label>
+            </p>
+        </fieldset>
+        <p>
+            <input type="submit" id="submit" value="確定提交">
+            <input type="reset" id="reset" value="重新填寫">
+        </p>
+    </form>    
+</main>
+<footer>
+</footer>
+</body>
+</html>

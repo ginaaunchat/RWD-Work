@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<style type="text/css">
+* {
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	background-image:url(../image/bg01.png);
+	width: 860px;
+	margin-right: auto;
+	margin-left: auto;
+	background-repeat: repeat-y;
+	background-position: center top;
+	background-color: #960;
+	padding: 20px;
+	font-size: 13px;
+}
+#menu li {
+	list-style-type: none;
+	margin-bottom: 5px;
+}
+#menu>li {
+	float: left;
+	width: 200px;
+	margin-right: 10px;
+}
+#menu li h2 {
+	background-color: #333;
+	padding: 3px;
+	font-family: Verdana, "Adobe 繁黑體 Std B", sans-serif;
+	color: #FFF;
+	font-size: 14px;
+	cursor: pointer;
+}
+#menu li ul {
+	background-color: #333;
+	padding: 8px;
+	display: none;
+}
+#menu li ul li a {
+	color: #FFF;
+	text-decoration: none;
+	font-family: Verdana, Geneva, sans-serif;
+	display: block;
+	width: 100%;
+	padding-bottom: 8px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #4B4B4B;
+}
+#menu li ul li a:hover {
+	border-bottom-color: #5B5B5B;
+}
+</style>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script>
+$(document).ready(function() {
+////    選取器在滑鼠碰到時,此子代選取器清除動畫佇列,向下滑
+//    $('#menu li').mouseenter(function(){
+//        $(this).children('ul').stop().slideDown();
+//    });
+//    
+//    $('#menu li').mouseleave(function(){
+//        $(this).children('ul').stop().slideUp();
+//    });
+    $('#menu li').hover(function(){
+        $(this).children('ul').stop().slideDown();
+    },function(){
+        $(this).children('ul').stop().slideUp();
+    });
+//    hover代表滑入滑出,需兩個function
+});
+</script>
+</head>
+
+<body>
+<ul id="menu">
+  <li>
+    <h2 id="menu1"><span id="Getting_Started">SELECTORS</span></h2>
+    <ul>
+      <li><a href="http://api.jquery.com/category/selectors/attribute-selectors/">Attribute</a></li>
+      <li><a href="http://api.jquery.com/category/selectors/basic-css-selectors/">Basic</a></li>
+      <li><a href="http://api.jquery.com/category/selectors/basic-filter-selectors/">Basic Filter</a></li>
+      <li><a href="http://api.jquery.com/category/selectors/child-filter-selectors/">Child Filter</a></li>
+      <li><a href="http://api.jquery.com/category/selectors/content-filter-selector/">Content Filter</a></li>
+      <li><a href="http://api.jquery.com/category/selectors/form-selectors/">Form</a></li>
+      <li><a href="http://api.jquery.com/category/selectors/hierarchy-selectors/">Hierarchy</a></li>
+      <li><a href="http://api.jquery.com/category/selectors/jquery-selector-extensions/">jQuery Extensions</a></li>
+      <li><a href="http://api.jquery.com/category/selectors/visibility-filter-selectors/">Visibility Filter</a></li>
+    </ul>
+  </li>
+  <li>
+    <h2 id="menu2"><span id="Plugins">EFFECTS</span></h2>
+    <ul>
+      <li><a href="http://api.jquery.com/category/effects/basics/">basics</a></li>
+      <li><a href="http://api.jquery.com/category/effects/custom-effects/">Custom</a></li>
+      <li><a href="http://api.jquery.com/category/effects/fading/">Fading</a></li>
+      <li><a href="http://api.jquery.com/category/effects/sliding/">Sliding</a></li>
+    </ul>
+  </li>
+  <li>
+    <h2 id="menu3"><span id="Support">EVENTS</span></h2>
+    <ul>
+      <li><a href="http://api.jquery.com/category/events/browser-events/">Browser Events</a></li>
+      <li><a href="http://api.jquery.com/category/events/document-loading/">Document Loading</a></li>
+      <li><a href="http://api.jquery.com/category/events/form-events/">Form Events</a></li>
+      <li><a href="http://api.jquery.com/category/events/keyboard-events/">Keyboard Events</a></li>
+      <li><a href="http://api.jquery.com/category/events/mouse-events/">Mouse Events</a></li>
+    </ul>
+  </li>
+  <li>
+    <h2 id="menu4"><span id="About_jQuery">AJAX</span></h2>
+    <ul>
+      <li><a href="http://api.jquery.com/category/ajax/global-ajax-event-handlers/">Global Ajax Event Handlers</a></li>
+      <li><a href="http://api.jquery.com/category/ajax/helper-functions/">Helper Functions</a></li>
+      <li><a href="http://api.jquery.com/category/ajax/low-level-interface/">Low-Level Interface</a></li>
+      <li><a href="http://api.jquery.com/category/ajax/shorthand-methods/">Shorthand Methods</a></li>
+    </ul>
+  </li>
+</ul>
+</body>
+</html>

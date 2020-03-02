@@ -1,0 +1,41 @@
+<!doctype html>
+<!--hide,more的練習-->
+<html>
+<head>
+<meta charset="utf-8">
+<title>effect01</title>
+<style type="text/css">
+#intro {
+	width: 500px;
+}
+a {
+	text-decoration: none;
+}
+</style>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script>
+    $(function(){
+        $('p.more,a.less').hide();
+//        隱藏多餘段落及hide
+        $('a.more').click(function(){
+            $('p.more,a.less').slideDown(1000);
+            $('a.more').hide();
+//          點選more時,顯示多餘段落及hide,並隱藏more
+        $('a.less').click(function(){
+            $('p.more,a.less').slideUp(300);
+            $('a.more').show();
+//            點選hide時,顯示more,並隱藏多餘段落及hide
+        });
+        });
+    });
+</script>
+</head>
+
+<body>
+<div id="intro">
+<p>jQuery主要是為了讓javascript的使用更為直覺，他將javascript中需要很多程式碼實作的功能包裝成方法，讓使用者只要呼叫這個方法便可以得到所需要的結果。這使得大多數的人不再為了javascript的繁複語法而困擾，進而可以善用這個功能強大的工具，讓網站開發事半功倍。 </p>
+<p class="more"> 其功能非常強大，但是檔案容量卻非常輕巧，不僅可以精簡程式碼， 讓一樣的功能用更簡單直覺的方式實作，還提供了方便的選擇器(Selector)，完善的事件處理機制，高度相容於不同的瀏覽器，豐富的外掛程式(plugin)及使用者介面(UI)。</p>
+<p><a class="more" href="javascript:;">more.....</a> <a class="less" href="javascript:;">hide.....</a></p>
+</div>
+</body>
+</html>

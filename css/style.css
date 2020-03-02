@@ -1,0 +1,326 @@
+body{
+    background-image: url(../images/bg1.jpg);
+}
+header{
+    height: 80px;
+    position: relative;
+    z-index: 1;
+}
+header h1{
+    background-image: url(../images/logo.png);
+    background-repeat: no-repeat;
+    height: 83px;
+    width:246px;
+    text-indent: -1000em;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    top:15px;
+    left:5px;
+/*    background-color: aqua;*/
+}
+header h1 a{
+    display: block;
+    height: 100%;
+/*    background-color: red;*/
+}
+/*選單規則,去除項目符號及縮排*/
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+/*    background-color: red;*/
+}
+/*主選單*/
+#nav02>ul{
+    display: flex;
+    position: absolute;
+    top: 45px;
+    right: 0;
+    width: calc(100% - 300px);
+}
+#nav02>ul>li{
+    flex: 1;
+}
+/*
+#nav02>ul>li:hover ul{
+    display: block;
+}
+*/
+
+#nav02 ul li a{
+    text-decoration: none;
+    color: #0b2f0a;
+    display: block;
+    text-align: center;
+    margin-bottom: 5px;
+}
+#nav02>ul>li>a{
+    font-weight: bold;
+    font-size: 1.1em;
+}
+/*放入sprite圖片*/
+#nav02>ul>li>a::before{
+    content: "";
+    background-image: url(../images/mainIcon.png);
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    vertical-align: middle;
+    transition: 0.3s;
+}
+#nav02>ul>li:nth-child(2)>a::before{
+    background-position: -16px 0;
+}
+#nav02>ul>li:nth-child(3)>a::before{
+    background-position: -32px 0;
+}
+#nav02>ul>li:nth-child(4)>a::before{
+    background-position: -48px 0;
+}
+#nav02>ul>li:nth-child(5)>a::before{
+    background-position: -64px 0;
+}
+#nav02>ul>li:nth-child(6)>a::before{
+    background-position: -80px 0;
+}
+#nav02>ul>li:nth-child(1)>a:hover::before{
+    background-position: 0 -16px;
+}
+#nav02>ul>li:nth-child(2)>a:hover::before{
+    background-position: -16px -16px;
+}
+#nav02>ul>li:nth-child(3)>a:hover::before{
+    background-position: -32px -16px;
+}
+#nav02>ul>li:nth-child(4)>a:hover::before{
+    background-position: -48px -16px;
+}
+#nav02>ul>li:nth-child(5)>a:hover::before{
+    background-position: -64px -16px;
+}
+#nav02>ul>li:nth-child(6)>a:hover::before{
+    background-position: -80px -16px;
+}
+
+#nav02 ul ul{
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.75);
+    padding: 12px 0;
+    z-index: 2;
+/*    display: none;*/
+}
+#nav02 ul ul li{
+    margin-bottom: 15px;
+}
+#nav02 ul ul li a{
+    padding-bottom: 6px;
+    margin: 0 20px;
+/*    background-color: red;*/
+}
+#nav02 ul ul li a:hover{
+    padding-bottom: 4px;
+    border-bottom: 2px dotted grey;
+
+}
+#menuBtn{
+    position: absolute;
+    top:30px;
+    right: 10px;    
+    font-size: 1.5em;
+    color: white;
+    display: none;
+}
+
+/*次選單*/
+#nav01{
+    position: absolute;
+    top: 0;
+    right: 15px;
+}
+/*ul要將margin,padding歸零*/
+#nav01 ul{
+    background-color: #446a44; 
+    border-radius: 0 0 10px 10px;
+    padding: 0px 7px;
+    overflow: hidden;
+}
+/*float找回浮排空間*/
+#nav01 ul:after{
+    content: "";
+    clear:both;
+    display: block;
+}
+#nav01 ul li{
+    float: left;
+    margin: 0 10px;    
+    position: relative;
+    padding-left: 24px;
+}
+#nav01 ul li i{
+    position: absolute;
+    left: 0;
+    transition: 0.8s;
+}
+/*圖片顏色,定位*/
+#nav01 ul li i:first-child{
+    color: white;
+    top: 0;
+}
+#nav01 ul li i:last-child{
+    color: yellow;
+    top: 1.5em;
+}
+/*圖片hover*/
+#nav01 ul li:hover i:first-child{
+    top:-1.5em;
+}
+#nav01 ul li:hover i:last-child{
+    top:0;
+}
+#nav01 ul li a{
+    color: aliceblue;
+    text-decoration: none;
+}
+#banner{
+    position: relative;
+    z-index: -2;
+}
+#banner img{
+    width: 100%;
+}
+main{
+    min-height: 250px;
+    margin: 10px 0;
+}
+main::after{
+    content: "";
+    clear: both;
+    display: block;
+}
+footer{
+    background-color: rgba(130, 170, 17, 0.5);
+    padding-top: 20px;
+    position: relative;
+}
+footer ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: #292e2e;
+    text-align: center;
+    }
+/*flex控制*/
+footer>ul{
+    display: flex;
+}
+footer>ul>li{
+    flex: 1;    
+    border-right: 1px dotted white;
+    padding: 50px 0;
+    position: relative;
+}
+footer>ul>li:last-child{
+    border: none;
+}
+footer h2{
+    font-size: 1.2em;
+    margin: 6px;
+    letter-spacing: 0.1em
+}
+/*hover變色練習*/
+footer h2::before{
+    font-family:"Font Awesome 5 Free","Font Awesome 5 Brands";
+    content:"\f05a";
+    font-size: 1.2em;
+    color: rgba(70, 121, 33, 0.89);
+    margin-right: 3px;
+}
+footer h2:hover::before{
+    font-family:"Font Awesome 5 Free","Font Awesome 5 Brands";
+    content:"\f05a";
+    font-size: 1.2em;
+    color: #c4c442;
+    margin-right: 3px;
+}
+/*加入footer底圖*/
+footer h2::after{
+    font-family:"Font Awesome 5 Free","Font Awesome 5 Brands";
+    position: absolute;
+    top: 30px;
+    left: 0;
+    font-size: 5em;
+    color: #c2e38e;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.1;
+}
+/*加入font awersome圖文字*/
+footer li:nth-child(1) h2::after{
+    content:"\f015";
+}
+footer li:nth-child(2) h2::after{
+    content:"\f2a0";
+}
+footer li:nth-child(3) h2::after{
+    content:"\f017";
+}
+footer ul ul li{
+    font-size: 0.9em;
+    margin-bottom: 4px;
+}
+/*版權宣告*/
+footer>small{
+    background-color: rgba(80, 113, 36, 0.8);
+    color: white;
+    display: block;
+    margin-top: 20px;   
+    padding: 8px;
+    text-align: center;
+}
+/*疊入背景圖*/
+#footerBG{
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    z-index: -2;
+}
+@media(max-width:480px){
+    header{
+        height: auto;
+    }
+    #menuBtn{
+        display: block;
+    }
+    #nav01 ul li a{
+        text-indent: -1000em;
+        display: block;
+    }
+    #nav01 ul li{
+/*        background-color: red;*/
+        margin: 0 5px;
+        padding-left: 8px;
+    }
+    #nav02>ul{
+        display: block;
+        position: static;
+        width: 100%;
+    }
+    #nav02>ul>li{
+        margin: 10px 0;
+    }
+    #nav02 ul ul{
+        background-color: transparent;
+        box-shadow: none;
+    }
+    footer>ul{
+        display: block;
+    }
+    footer>ul>li{
+        border-right: none;
+        border-bottom: 1px dotted white;
+        width: 80%;
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,121 @@
+#productMenu{
+    width: 162px;
+    float: left;
+    margin: 0 10px;
+}
+#productMenu>ul>li{
+    
+}
+#productMenu a{
+    text-decoration: none;    
+    display: block;
+    text-align: center;
+}
+#productMenu>ul>li>a{
+    background-image: url(../images/productMenuBg.png);
+    background-repeat: no-repeat;
+    height: 40px;    
+    line-height: 36px;
+    color: #f8f194;
+    letter-spacing: 0.2em;
+    font-weight: bold;
+    font-size: 1em;
+}
+#productMenu>ul>li>a:hover{
+    color: #9ff78b;
+    background-position: 0 -50px;
+}
+#productMenu ul ul{
+    margin-top: 7px;
+    padding-bottom: 15px;
+}
+#productMenu ul ul li{
+    margin-bottom: 16px;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
+    padding: 0 10px;
+}
+#productMenu ul ul li a{
+    color: #023b02;
+    padding-bottom: 3px;
+}
+#productMenu ul ul li a.thisPage{
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px 5px 0 0;
+    padding-top: 3px;
+}
+#productList{
+    float: right;
+    width: calc(100% - 182px);
+}
+#productList ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+#productList ul li{
+    margin: 0 10px 20px 10px;
+    padding: 10px;
+    flex:0 1 calc(33.3% - 40px);
+    letter-spacing: 0.2em;
+    transition: 1s;
+}
+#productList ul li:hover{
+    background-color: rgba(255, 255, 255, 0.3);
+    
+}
+#productList ul li .imgWrap{
+    overflow: hidden;
+}
+#productList ul li img{
+    width: 100%;
+    transition: 1s;
+}
+#productList ul li:hover img{
+    transform: scale(1.5);
+}
+#productList ul li h3{
+    margin: 10px 0 10px 0;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #037703;
+    font-size: 1.2em;
+}
+#productList ul li p{
+    border-bottom: 1px dotted #037703;
+    margin: 10px 0 0 0;
+    padding: 6px 0;
+    letter-spacing: 0.3em;
+    font-size: 0.95em;
+    line-height: 1.4em;
+}
+#productList ul li p:last-child{
+    border-bottom: none;
+}
+#productList ul li p::before{
+    color: white;
+    background-color: #025202;
+    font-size: 0.95em;
+    padding: 0 5px;
+    border-radius: 10px;
+    margin-right: 5px;
+}
+#productList ul li p:nth-of-type(1)::before{
+    content: "說明";
+}
+#productList ul li p:nth-of-type(2)::before{
+    content: "成份";
+}
+#topBtn{
+    display: block;
+    background-color: orange;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95em;
+}

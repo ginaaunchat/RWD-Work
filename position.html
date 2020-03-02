@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+       
+        div{
+            border:1px solid gray;
+            margin: 10px
+        }
+        #wrap{
+            background-color: cyan;
+            width: 600px;
+            position: relative;
+            margin: 0;
+            padding: 0;
+        }
+        #f1{
+            background-color: yellow;            
+        }
+        #s12{
+            background-color: orange;
+            width: 50px;
+            height: 50px;
+            position: relative;
+            left: -20px;
+            top: -20px;            
+        }
+        #f2{
+            background-color:limegreen;
+/*
+            position: fixed;
+            bottom: 0;
+            right: 0;
+*/
+            margin: 0;
+            padding: 0;
+            
+        }
+        #s22{
+            background-color: hotpink;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top:0;
+            right: 0;
+            margin: 0;
+            padding: 0;
+        }
+        #f3{
+            background-color: palevioletred;
+            height: 100px;
+            width: 100%;
+            position: fixed;
+            margin:0;
+            padding: 0;
+            right: 0;
+            bottom: 0;
+        }
+        
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div id="f1">
+       f1
+        <div id="s11">s11</div>
+        <div id="s12">s12</div>
+        <div id="s13">s13</div>
+    </div>
+    <div id="f2">
+       f2
+        <div id="s21">s21</div>
+        <div id="s22">s22</div>
+        <div id="s23">s23</div>
+    </div>
+    <div id="f3">f3</div>
+</div>
+
+</body>
+</html>
